@@ -22,7 +22,7 @@ jobs:
     steps:
       - name: print_variables
         run: |
-          echo $greeting $first_name $cloud with {{vars.project.id}}
+          echo $greeting $first_name $cloud with ${{vars.project.id}}
 
         env:
           first_name: madhu
