@@ -6,28 +6,23 @@ env:
 on:
   push:
     branches: ["main"]
-  pull_request: 
-     branches: ["main"]
-     
- workflow_dispatch:
+
+  pull_request:
+    branches: ["main"]
+
+  workflow_dispatch:
+
 jobs:
- build:
-  runs-on: ubuntu-latest
-  env:
-    greeting:hello
+  build:
+    runs-on: ubuntu-latest
 
-  steps:
-    - name: print_variables
-      run: |
-       echo $greeting $first_name $cloud
+    env:
+      greeting: hello
 
-      env:
-        first_name:madhu
-      
-  
- 
+    steps:
+      - name: print_variables
+        run: |
+          echo $greeting $first_name $cloud
 
-
-
-
-
+        env:
+          first_name: madhu
