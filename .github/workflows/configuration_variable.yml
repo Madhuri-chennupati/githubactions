@@ -1,0 +1,28 @@
+name: Configuartion_Variables_workflow
+
+env:
+  cloud: aws
+
+on:
+  push:
+    branches: ["main"]
+
+  pull_request:
+    branches: ["main"]
+
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    env:
+      greeting: hello
+
+    steps:
+      - name: print_variables
+        run: |
+          echo $greeting $first_name $cloud with {{vars.project.id}}
+
+        env:
+          first_name: madhu
